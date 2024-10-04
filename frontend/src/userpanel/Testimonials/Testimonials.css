@@ -1,0 +1,70 @@
+/* src/userpanel/Testimonials/Testimonials.css */
+
+.testimonial-section {
+    width: 100%; /* Full width of the screen */
+    padding: 40px 0; /* Vertical padding */
+    background-color: #f9f9f9; /* Light background color */
+    text-align: center; /* Center text */
+  }
+  
+  .testimonial-section h2 {
+    margin-bottom: 30px; /* Space below the title */
+    font-size: 2.5em; /* Increase font size */
+    color: #333; /* Darker color for the title */
+  }
+  
+  .testimonial-slide {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center align content */
+    align-items: center; /* Center vertically */
+    padding: 20px; /* Add some padding */
+    background-color: #fff; /* White background for each slide */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    height: 200px; /* Fixed height for uniformity */
+    transition: transform 0.3s; /* Add transition for hover effect */
+  }
+  
+  .testimonial-slide:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+  
+  .feedback {
+    font-style: italic; /* Italicize the feedback */
+    margin-bottom: 10px; /* Space below the feedback */
+    font-size: 1.2em; /* Increase font size */
+    color: #555; /* Grey color */
+  }
+  
+  .customer-name {
+    font-weight: bold; /* Bold the customer's name */
+    color: #333; /* Dark color */
+  }
+  
+  .customer-rating {
+    font-size: 1.2em; /* Increase rating font size */
+    color: #f39c12; /* Gold color for star ratings */
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .testimonial-section {
+      padding: 20px; /* Adjust padding for smaller screens */
+    }
+  
+    .testimonial-slide {
+      height: 150px; /* Adjust height for smaller screens */
+      padding: 15px; /* Adjust slide padding for smaller screens */
+    }
+  
+    .testimonial-section h2 {
+      font-size: 2em; /* Reduce font size for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .testimonial-slide {
+      height: 120px; /* Further adjust height for mobile */
+    }
+  }
+  

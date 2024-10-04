@@ -1,0 +1,63 @@
+/* Inquiry Section */
+.inquiry-section {
+  background-image: url('../../assets/inquery.jpg'); /* Your image path */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* To keep the background fixed */
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Inquiry Form Container */
+.inquiry-form-container {
+  background-color: rgba(255, 255, 255, 0.9); /* Slight white background with opacity */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Shadow for form */
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Input Fields with Icons */
+.input-icon {
+  position: relative;
+}
+
+.input-icon .form-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #d9534f;
+}
+
+.input-icon .form-control {
+  padding-left: 35px;
+}
+
+/* Submit Button */
+.inquiry-form-container button {
+  background-color: #d9534f;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.inquiry-form-container button:hover {
+  background-color: #c9302c;
+}
+
+@media (max-width: 768px) {
+  .inquiry-section {
+    padding: 10px;
+    background-attachment: scroll; /* To ensure smooth behavior on smaller screens */
+  }
+
+  .inquiry-form-container {
+    padding: 20px;
+  }
+}

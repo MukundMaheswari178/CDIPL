@@ -1,0 +1,61 @@
+/* ProjectForm.css */
+
+/* Container and spacing */
+.projectlisting-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+   
+    background-color: #f9f9f9;
+    border-radius: 10px;
+  }
+  
+  .projectlisting-mt-5 {
+    margin-top: 8rem;
+  }
+  
+  .projectlisting-mb-3 {
+    margin-bottom: 1rem;
+  }
+  
+  /* Form label */
+  .projectlisting-form-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Form control */
+  .projectlisting-form-control {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .projectlisting-form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Button styling */
+  .projectlisting-btn {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .projectlisting-btn-primary {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .projectlisting-btn-primary:hover {
+    background-color: #0056b3;
+  }
+  

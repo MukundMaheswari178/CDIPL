@@ -1,0 +1,75 @@
+/* Container styles for the About Section */
+.about-section .sub-title {
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+  }
+  
+  .about-section .display-5 {
+    color: #333;
+    font-weight: 700;
+  }
+  
+  /* Padding between icons and text */
+  .about-section .icon-text {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .about-section .icon-text i {
+    font-size: 30px;
+    color: #007bff; /* Color of icons */
+    margin-right: 15px; /* Add margin between icon and text */
+  }
+  
+  .about-section .service-icon {
+    font-size: 24px;
+    margin-right: 15px; /* Add space between icons and text */
+    color: #007bff;
+  }
+  
+  .about-section .icon-section {
+    margin-right: 10px;
+  }
+  
+  /* Style for each row containing services */
+  .about-section .service-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  /* Style for the years of experience section */
+  .about-section .years-experience {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  /* Contact section styling */
+  .about-section .contact-btn {
+    font-size: 22px;
+    color: #007bff;
+    border-color: #007bff;
+    padding: 12px 24px;
+  }
+  
+  .about-section .contact-btn i {
+    margin-right: 10px;
+  }
+  
+  .about-section .phone-info {
+    margin-left: 15px;
+  }
+  
+  .about-section .phone-info span {
+    font-size: 18px;
+  }
+  
+  .about-section .wow {
+    animation-delay: 0.5s;
+  }
+  

@@ -1,0 +1,380 @@
+.project-detail-container {
+  background-color: #f4f4f4;
+  padding: 2rem 0;
+}
+
+.custom-gap {
+  margin-left: 13px; /* Adjust as needed */
+  margin-right: 13px; /* Adjust as needed */
+}
+
+/* Main image styling */
+.project-image .main-img {
+  width: 100%;
+  height: auto;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery images */
+.gallery img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Project details */
+.project-details {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.project-location {
+  font-size: 1.2rem;
+  color: #777;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* Additional details and RERA */
+.project-additional-details {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.project-additional-details li {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.project-additional-details strong {
+  font-weight: bold;
+}
+
+/* Sticky Header Styles */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+  padding: 10px 0; /* Reduced padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.sticky-header .nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.sticky-header .nav a {
+  color: #333;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+.sticky-header .nav a:hover {
+  color: red;
+}
+
+.himanshu ul {
+  padding-left: 30px; /* Indentation */
+  /* Spacing below the list */
+  margin-bottom: auto;
+}
+
+.himanshu li {
+  padding-left: 30px; /* Indentation */
+  /* Spacing below the list */
+  
+}
+
+
+.roww {
+  display: flex;
+  justify-content: space-between;
+  /* Spacing between rows */
+}
+
+.coll {
+  flex: 1;
+  padding: 5px;
+}
+
+.coll:not(:last-child) {
+  border-right: 5px solid #ccc; /* Optional divider */
+  
+  
+}
+
+
+/* Adjustments for mobile views */
+@media (max-width: 768px) {
+  .sticky-header {
+    padding: 5px 0; /* Further reduce padding on small screens */
+  }
+  
+  .sticky-header .nav {
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust gap for smaller screen */
+    justify-content: center;
+  }
+
+  .sticky-header .nav a {
+    font-size: 0.9rem; /* Smaller font for mobile */
+    padding: 8px 12px; /* Smaller padding for mobile */
+  }
+}
+
+/* Project Highlights Section */
+.project-highlights-and-contact {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.new-section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-box {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-box .highlight-icon {
+  font-size: 2rem;
+  color: #ff5e57;
+  margin-bottom: 10px;
+}
+
+.highlight-box .highlight-text strong {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.highlight-box .highlight-text p {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Contact Form Section */
+.contact-form-container {
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.contact-form h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-form p {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.contact-form button {
+  background-color: #ff5e57;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  color: white;
+}
+
+.contact-form button:hover {
+  background-color: #e04a45;
+}
+
+/* Base styles for the Overview section */
+.overview-details {
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background for contrast */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.overview-details h4 {
+  font-size: 1.5rem; /* Larger title */
+  margin-bottom: 15px;
+}
+
+.overview-details p {
+  margin-bottom: 15px; /* Space below paragraph */
+}
+
+/* Bullet points styling */
+.overview-details ul {
+  list-style: none; /* Remove default bullets */
+  padding-left: 0; /* Remove padding */
+}
+
+.overview-details ul li {
+  position: relative; /* Positioning for pseudo-element */
+  padding-left: 30px; /* Space for the icon */
+  margin-bottom: 10px; /* Space between items */
+}
+
+.overview-details ul li::before {
+  content: '\f058'; /* Font Awesome icon code for a check (fa-check) */
+  font-family: 'Font Awesome 5 Free'; /* Specify Font Awesome font */
+  font-weight: 900; /* Solid weight for the icon */
+  position: absolute; /* Position the icon */
+  left: 0; /* Align to the left */
+  color: #007bff; /* Change icon color */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .overview-details {
+    padding: 15px; /* Adjust padding on smaller screens */
+  }
+
+  .overview-details h4 {
+    font-size: 1.25rem; /* Smaller title */
+  }
+
+  .sticky-header {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* Closer gap between elements */
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    row-gap: 10px; /* Stack navigation items vertically */
+  }
+
+  .overview-details p {
+    font-size: 0.9rem; /* Smaller paragraph text */
+  }
+}
+
+/* Ensure carousel images are responsive */
+.carousel-inner img {
+  width: 100%; /* Make sure images fill the container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+@media (max-width: 576px) {
+  .col-md-9,
+  .col-md-3 {
+    width: 100%; /* Full width on small screens */
+    flex: 0 0 100%; /* Ensure full width */
+  }
+}
+
+/* Hide images in overview section for phone view */
+@media (max-width: 768px) {
+  .overview-section .col-lg-3 {
+    display: none;
+  }
+
+  /* Move "Download Brochure" button below content */
+  .sticky-header .btn-outline-primary {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .new-section {
+    padding: 2rem;
+  }
+
+  .highlight-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .highlight-icon {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Popup styling */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Make sure it's above other content */
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 400px; /* Set a fixed width for the popup */
+  position: relative; /* Positioning for the close button */
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+
+.more-details-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.more-info-list p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.more-details-box h5 {
+  font-weight: 600;
+}
+
+.more-details-box .col-md-4 {
+  padding: 10px 0;
+}
+
+

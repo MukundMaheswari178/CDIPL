@@ -1,0 +1,545 @@
+/* General Styling */
+.about-company-container {
+  width: 100%;
+}
+
+.about-company-header {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 300px;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-title h1 {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.our-story-section {
+  padding: 50px 0;
+}
+
+.story-heading {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in forwards;
+}
+
+.story-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in forwards;
+}
+
+.combined-story-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-right: 30px;
+}
+
+.image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.story-img1,
+.story-img2 {
+  width: 300px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.story-img1 {
+  position: relative;
+  z-index: 1;
+  transform: rotate(-5deg);
+  opacity: 0;
+  animation: fadeInLeft 1s ease-in forwards;
+}
+
+.story-img2 {
+  position: absolute;
+  top: 20px;
+  left: 150px;
+  z-index: 0;
+  transform: rotate(5deg);
+  opacity: 0;
+  animation: fadeInRight 1s ease-in forwards;
+}
+
+.image-wrapper:hover .story-img1 {
+  transform: scale(1.05) rotate(0deg);
+}
+
+.image-wrapper:hover .story-img2 {
+  transform: scale(1.05) rotate(0deg);
+}
+
+.story-content {
+  flex: 1;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-in forwards;
+}
+
+.story-content p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  transform: translateY(30px);
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-in forwards;
+}
+
+.story-highlights {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeIn 1.4s ease-in forwards;
+}
+
+.highlight {
+  text-align: center;
+  padding: 20px;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-in forwards;
+}
+
+.highlight h3 {
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+.highlight p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .story-content-wrapper {
+      flex-direction: column;
+      opacity: 0;
+      animation: fadeInUp 1s ease-in forwards;
+  }
+
+  .combined-story-image {
+      margin-bottom: 30px;
+  }
+
+  .story-img1,
+  .story-img2 {
+      width: 100%;
+      max-width: 250px;
+      left: 0; /* Adjust for centering */
+      top: 0;  /* Adjust for mobile alignment */
+  }
+}
+
+
+
+.leadership-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Heading Styling */
+  .leadership-heading {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+  }
+  
+  /* Grid Setup for Two Cards Per Row */
+  .leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Leadership Card */
+  .leadership-card {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  /* Hover Animation */
+  .leadership-card:hover {
+    transform: rotateY(10deg) rotateX(10deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Leader Left (Image and Info) */
+  .leader-left {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+  }
+  
+  /* Leader Image */
+  .leader-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Image Zoom Animation */
+  .leadership-card:hover .leader-photo {
+    transform: scale(1.1);
+  }
+  
+  /* Leader Info */
+  .leader-info h3 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+  }
+  
+  .leader-position {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #007bff;
+  }
+  
+  /* Leader Right (Description) */
+  .leader-right {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    text-align: left;
+    font-size: 1em;
+    color: #666;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    /* One card per row for medium screens */
+    .leadership-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .leadership-card {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .leader-right {
+      padding-left: 0;
+      padding-top: 20px;
+    }
+  
+    .leader-photo {
+      width: 160px;
+      height: 160px;
+    }
+  }
+  
+  
+  /* Mission and Vision Styling */
+.mission-vision-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .mission-vision-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .mission-vision-wrapper:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .mission-vision-image {
+    position: relative;
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .reverse-layout .mission-vision-image {
+    margin-left: 20px;
+    margin-right: 0;
+  }
+  
+  .image-box {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .image-box:hover {
+    transform: scale(1.05);
+  }
+  
+  .image-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .mission-vision-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .mission-vision-content h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    position: relative;
+  }
+  
+  .mission-vision-content h2:before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #ff9800;
+    bottom: -5px;
+    left: 0;
+  }
+  
+  .mission-vision-content p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .mission-vision-wrapper {
+      flex-direction: column;
+      text-align: center;
+      padding: 10px;
+    }
+  
+    .mission-vision-image {
+      margin: 0 0 20px 0;
+    }
+  
+    .reverse-layout .mission-vision-image {
+      margin: 0 0 20px 0;
+    }
+  
+    .mission-vision-content h2 {
+      font-size: 28px;
+    }
+  
+    .mission-vision-content p {
+      font-size: 14px;
+    }
+  }
+  
+  
+  .image-box {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .image-overlay {
+    position: relative;
+  }
+  
+  .image-text {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .sticky-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #333;
+    padding: 10px 0;
+    margin: 0;
+  }
+  
+  .sticky-nav ul li {
+    display: inline-block;
+  }
+  
+  .sticky-nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  .sticky-nav ul li a:hover {
+    color: #ff9800;
+  }
+
+  .ceo-desk-section {
+    padding: 60px 20px;
+    background-color: #f4f7fa;
+  }
+  
+  .ceo-desk-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+  
+  /* CEO Desk Layout */
+  .ceo-desk-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    padding: 30px;
+  }
+  
+  /* 3D Hover Effect */
+  .ceo-desk-content:hover {
+    transform: translateY(-10px) scale(1.02);
+  }
+  
+  /* CEO Image */
+  .ceo-image {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .ceo-image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease;
+  }
+  
+  /* Rotate and scale image on hover */
+  .ceo-image img:hover {
+    transform: rotate(3deg) scale(1.05);
+  }
+  
+  /* CEO Message */
+  .ceo-message {
+    flex: 2;
+    color: #444;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding-left: 20px;
+    animation: fadeInRight 1s ease-in-out;
+  }
+  
+  /* Text Animation */
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .ceo-desk-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .ceo-image {
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .ceo-message {
+      padding-left: 0;
+    }
+  }
+  
+  

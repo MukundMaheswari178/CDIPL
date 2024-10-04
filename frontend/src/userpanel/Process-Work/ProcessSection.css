@@ -1,0 +1,132 @@
+.process-container {
+    padding: 2rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+    color: white;
+    background-color: rgba(245, 222, 179, 0.524);
+}
+
+.process-body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.left-side, .right-side {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.logo-section {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.cdipl-logo {
+    width: 180px;
+    animation: bounce 2s infinite;
+}
+
+.process-item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background-color: rgba(243, 28, 8, 0.784);
+    padding: 1rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-item img {
+    width: 50px;
+}
+
+.process-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.animated-item {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive styles for tablet and mobile */
+@media screen and (max-width: 768px) {
+    .process-body {
+        flex-direction: column;
+    }
+
+    .cdipl-logo {
+        width: 150px;
+    }
+
+    .left-side, .right-side {
+        align-items: center;
+    }
+
+    .process-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .process-item img {
+        width: 60px;
+        margin-bottom: 1rem;
+    }
+
+    .process-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .process-item p {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .process-item img {
+        width: 50px;
+    }
+
+    .process-item h3 {
+        font-size: 1rem;
+    }
+
+    .process-item p {
+        font-size: 0.8rem;
+    }
+
+    .cdipl-logo {
+        width: 120px;
+    }
+}
