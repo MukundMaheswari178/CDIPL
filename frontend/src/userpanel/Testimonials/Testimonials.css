@@ -3,7 +3,7 @@
 .testimonial-section {
     width: 100%; /* Full width of the screen */
     padding: 40px 0; /* Vertical padding */
-    background-color: #f9f9f9; /* Light background color */
+    background-color: #f0f4f8; /* Light background color */
     text-align: center; /* Center text */
   }
   
@@ -16,16 +16,22 @@
   .testimonial-slide {
     display: flex; /* Use flexbox for alignment */
     justify-content: center; /* Center align content */
-    align-items: center; /* Center vertically */
-    padding: 20px; /* Add some padding */
-    background-color: #fff; /* White background for each slide */
+  }
+  
+  .testimonial-card {
+    background-color: #fff; /* White background for each card */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 20px; /* Add some padding */
+    width: 300px; /* Fixed width for the card */
     height: 200px; /* Fixed height for uniformity */
+    display: flex; /* Flexbox for vertical centering */
+    flex-direction: column; /* Arrange items in a column */
+    justify-content: center; /* Center vertically */
     transition: transform 0.3s; /* Add transition for hover effect */
   }
   
-  .testimonial-slide:hover {
+  .testimonial-card:hover {
     transform: scale(1.05); /* Slight zoom on hover */
   }
   
@@ -39,6 +45,7 @@
   .customer-name {
     font-weight: bold; /* Bold the customer's name */
     color: #333; /* Dark color */
+    margin-top: auto; /* Push name to the bottom */
   }
   
   .customer-rating {
@@ -52,9 +59,9 @@
       padding: 20px; /* Adjust padding for smaller screens */
     }
   
-    .testimonial-slide {
-      height: 150px; /* Adjust height for smaller screens */
-      padding: 15px; /* Adjust slide padding for smaller screens */
+    .testimonial-card {
+      width: 90%; /* Use most of the width on smaller screens */
+      height: auto; /* Adjust height for content */
     }
   
     .testimonial-section h2 {
@@ -63,8 +70,8 @@
   }
   
   @media (max-width: 480px) {
-    .testimonial-slide {
-      height: 120px; /* Further adjust height for mobile */
+    .testimonial-card {
+      height: auto; /* Allow height to adjust */
     }
   }
   

@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './PropertyListing.css';
 import Footer from '../Footer/Footer';
 import { Link } from 'react-router-dom';
+import office1 from '../../assets/office-1.jpg';
+import office2 from '../../assets/office-2.jpg';
+import office3 from '../../assets/office-3.jpg';
 
 const PropertyListing = () => {
   const [filters, setFilters] = useState({
@@ -17,9 +20,9 @@ const PropertyListing = () => {
 
   const [properties, setProperties] = useState([
     // Example property data (replace with API data)
-    { id: 1, tittle: '2-BHK-Flat-in-East-Of-Kailash', name: '2 BHK Flat in East Of Kailash', price: '₹35 Lacs', area: '713 sqft', emi: '₹20,060/Month', facing: 'North', bathrooms: 2, parking: 'Bike', imageUrl: 'property1.jpg' },
-    { id: 2, tittle: '3-BHK-Apartment-in-Gurgaon',name: '3 BHK Apartment in Gurgaon', price: '₹65 Lacs', area: '1200 sqft', emi: '₹40,060/Month', facing: 'East', bathrooms: 3, parking: 'Car', imageUrl: 'property2.jpg' },
-    { id: 3, tittle: '1-BHK-Studio-in-Noida',name: '1 BHK Studio in Noida', price: '₹25 Lacs', area: '500 sqft', emi: '₹15,060/Month', facing: 'West', bathrooms: 1, parking: 'None', imageUrl: 'property3.jpg' },
+    { id: 1, tittle: '2-BHK-Flat-in-East-Of-Kailash', name: '2 BHK Flat in East Of Kailash', price: '₹35 Lacs', area: '713 sqft', emi: '₹20,060/Month', facing: 'North', bathrooms: 2, parking: 'Bike', imageUrl: office1 },
+    { id: 2, tittle: '3-BHK-Apartment-in-Gurgaon',name: '3 BHK Apartment in Gurgaon', price: '₹65 Lacs', area: '1200 sqft', emi: '₹40,060/Month', facing: 'East', bathrooms: 3, parking: 'Car', imageUrl: office2 },
+    { id: 3, tittle: '1-BHK-Studio-in-Noida',name: '1 BHK Studio in Noida', price: '₹25 Lacs', area: '500 sqft', emi: '₹15,060/Month', facing: 'West', bathrooms: 1, parking: 'None', imageUrl: office3 },
     // Add more properties here...
   ]);
 

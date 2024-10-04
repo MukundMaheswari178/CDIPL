@@ -1,4 +1,3 @@
-// controllers/uploadController.js
 const Upload = require('../models/Upload');
 const path = require('path');
 
@@ -10,9 +9,9 @@ const uploadFiles = async (req, res) => {
   }
 
   try {
-    const fileUrl = path.join('/uploads/', req.file.filename); // Save the relative file path
+    const fileUrl = path.join('/uploads/', req.file.filename); // Create the relative file path
 
-    // Create an entry in the Upload table
+    // Save the uploaded file details to the database
     const upload = await Upload.create({
       projectTitle,
       fileName: req.file.filename,
@@ -37,6 +36,9 @@ const fetchUploadsByProjectTitle = async (req, res) => {
 
   try {
     const uploads = await Upload.findAll({ where: { projectTitle: title } });
+    if (uploads.length === 0) {
+      return res.status(404).json({ success: false, message: 'No uploads found for this project.' });
+    }
     res.status(200).json({ success: true, uploads });
   } catch (error) {
     console.error('Error fetching uploads:', error);

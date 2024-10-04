@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextField, Button, Box, Typography, Paper, Link } from "@mui/material";
+import config from "../../config";
+
 
 function Login({ setIsAdminLoggedIn }) {
   const [email, setEmail] = useState("");
@@ -15,7 +17,7 @@ function Login({ setIsAdminLoggedIn }) {
     setMessage(""); // Clear previous messages
 
     try {
-      const response = await fetch("http://localhost:5000/api/login", {
+      const response = await fetch(`${config.baseURL}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

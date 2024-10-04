@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
+import config from "../../config"; // Import the base URL from config.js
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -12,23 +13,23 @@ const Signup = () => {
     address: "",
   });
 
-  const [message, setMessage] = useState(""); // For success/error messages
-  const [loading, setLoading] = useState(false); // Loading state for button
-  const [errors, setErrors] = useState({}); // For form validation errors
-  const [loggedIn, setLoggedIn] = useState(false); // To manage login state
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [loggedIn, setLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
-  // Form validation (simple example)
   const validateForm = () => {
     let errors = {};
 
     if (!formData.name) errors.name = "Name is required.";
     if (!formData.email) errors.email = "Email is required.";
     else if (!/\S+@\S+\.\S+/.test(formData.email)) errors.email = "Email is invalid.";
-    
+
     if (!formData.phone) errors.phone = "Phone number is required.";
     if (!formData.password) errors.password = "Password is required.";
-    else if (formData.password.length < 6) errors.password = "Password must be at least 6 characters long.";
+    else if (formData.password.length < 6)
+      errors.password = "Password must be at least 6 characters long.";
 
     if (!formData.address) errors.address = "Address is required.";
 
@@ -44,9 +45,9 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setErrors({}); // Clear previous errors
+    setErrors({});
     const validationErrors = validateForm();
-    
+
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
@@ -54,7 +55,7 @@ const Signup = () => {
 
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/api/signup", {
+      const response = await fetch(`${config.baseURL}/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,9 +66,8 @@ const Signup = () => {
 
       if (response.ok) {
         setMessage("Signup successful!");
-        // Store token in localStorage
         localStorage.setItem("token", data.token);
-        setLoggedIn(true); // Set user as logged in after successful signup
+        setLoggedIn(true);
         setFormData({
           name: "",
           email: "",
@@ -77,10 +77,7 @@ const Signup = () => {
           address: "",
         });
 
-           // Redirect to home page after successful signup
-           navigate("/");
-
-
+        navigate("/");
       } else {
         setMessage(`Error: ${data.message}`);
       }
@@ -91,24 +88,20 @@ const Signup = () => {
     }
   };
 
-  // Check if user is logged in by verifying token on component mount
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      // You can make a request to verify the token or set user state as logged in
-      setLoggedIn(true); // Example state management
+      setLoggedIn(true);
     }
-  }, []); // Empty dependency array ensures this runs only once, when the component mounts
+  }, []);
 
   return (
-    <div className="container" style={{ marginTop: '5rem' }}>
+    <div className="container" style={{ marginTop: "5rem" }}>
       <div className="row justify-content-center">
         <div className="col-lg-6 col-md-8">
           <div className="card shadow-lg p-4">
             <h2 className="text-center mb-4">Sign Up</h2>
             {message && <p className="alert alert-info text-center">{message}</p>}
-            
-            {/* Conditionally render content based on login state */}
             {loggedIn ? (
               <p className="text-center">You are already logged in.</p>
             ) : (
@@ -117,7 +110,7 @@ const Signup = () => {
                   <label htmlFor="name">Name</label>
                   <input
                     type="text"
-                    className={`form-control ${errors.name && 'is-invalid'}`}
+                    className={`form-control ${errors.name && "is-invalid"}`}
                     id="name"
                     name="name"
                     value={formData.name}
@@ -132,7 +125,7 @@ const Signup = () => {
                   <label htmlFor="email">Email</label>
                   <input
                     type="email"
-                    className={`form-control ${errors.email && 'is-invalid'}`}
+                    className={`form-control ${errors.email && "is-invalid"}`}
                     id="email"
                     name="email"
                     value={formData.email}
@@ -147,7 +140,7 @@ const Signup = () => {
                   <label htmlFor="phone">Phone Number</label>
                   <input
                     type="tel"
-                    className={`form-control ${errors.phone && 'is-invalid'}`}
+                    className={`form-control ${errors.phone && "is-invalid"}`}
                     id="phone"
                     name="phone"
                     value={formData.phone}
@@ -162,7 +155,7 @@ const Signup = () => {
                   <label htmlFor="password">Password</label>
                   <input
                     type="password"
-                    className={`form-control ${errors.password && 'is-invalid'}`}
+                    className={`form-control ${errors.password && "is-invalid"}`}
                     id="password"
                     name="password"
                     value={formData.password}
@@ -176,7 +169,7 @@ const Signup = () => {
                 <div className="form-group">
                   <label htmlFor="address">Address</label>
                   <textarea
-                    className={`form-control ${errors.address && 'is-invalid'}`}
+                    className={`form-control ${errors.address && "is-invalid"}`}
                     id="address"
                     name="address"
                     value={formData.address}

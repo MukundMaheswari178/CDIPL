@@ -6,6 +6,7 @@ import Topbar from '../scenes/global/Topbar';
 import Sidebar from '../scenes/global/Sidebar';
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "../theme";
+import config from '../config';
 
 const AmenitiesForm = () => {
   const { tittle } = useParams(); // Use useParams to get the project tittle
@@ -62,7 +63,7 @@ const AmenitiesForm = () => {
 
     try {
       // Post amenities data
-      const response = await axios.post(`http://localhost:5000/api/amenities/${tittle}`, formData);
+      const response = await axios.post(`${config.baseURL}/amenities/${tittle}`, formData);
       
       if (response.data.success) {
         setMessage('Amenities submitted successfully');

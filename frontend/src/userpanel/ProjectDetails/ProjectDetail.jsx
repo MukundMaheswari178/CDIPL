@@ -12,6 +12,7 @@ import FeedbackForm from '../Feedback/Feedback';
 import Footer from '../Footer/Footer';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import config from '../../config';
 
 const ProjectDetail = () => {
 
@@ -59,7 +60,7 @@ const ProjectDetail = () => {
   useEffect(() => {
     const fetchAmenities = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/fetchamenities/${tittle}`);
+        const response = await axios.get(`${config.baseURL}/fetchamenities/${tittle}`);
         if (response.data.success) {
           setPamenities(response.data.amenities);
           console.log(response.data.amenities);
@@ -78,7 +79,7 @@ const ProjectDetail = () => {
   useEffect(() => {
     const fetchProjectData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/project/${tittle}`);
+        const response = await axios.get(`${config.baseURL}/project/${tittle}`);
         setProjectData(response.data.project); // Make sure you're accessing the `project` field
         setLoading(false);
       } catch (error) {
@@ -108,7 +109,7 @@ const ProjectDetail = () => {
 
   return (
     <div className="project-detail-container container-fluid">
-      <div className="row gx-4 gy-4 custom-gap  pt-5 pb-5 mt-1"> {/* Adjusted gutter classes for padding */}
+      <div className="row gx-4 gy-4 custom-gap"> {/* Adjusted gutter classes for padding */}
         {/* Left Side: Images and Project Highlights */}
         <div className="col-lg-6">
           {/* Carousel for Main Project Image */}

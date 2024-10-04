@@ -6,6 +6,7 @@ import Topbar from '../scenes/global/Topbar';
 import Sidebar from '../scenes/global/Sidebar';
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "../theme";
+import config from '../config';
 
 const ProjectForm = () => {
     const [formData, setFormData] = useState({
@@ -52,7 +53,7 @@ const ProjectForm = () => {
         try {
            // Basic form validation for startingPrice to be a valid number
            
-          const response = await axios.post('http://localhost:5000/api/projects', formData);
+          const response = await axios.post(`${config.baseURL}/projects`, formData);
     
           if (response.data.success) {
             setMessage('Form data submitted successfully');

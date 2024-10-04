@@ -1,4 +1,3 @@
-// routes/uploadRoutes.js
 const express = require('express');
 const { uploadFiles, fetchUploadsByProjectTitle } = require('../controllers/uploadController');
 const upload = require('../middleware/upload'); // Multer middleware
