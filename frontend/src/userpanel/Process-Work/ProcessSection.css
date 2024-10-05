@@ -29,11 +29,13 @@
     display: flex;
     justify-content: center;
     margin: 2rem 0;
+    padding: 20px;
 }
 
 .cdipl-logo {
     width: 180px;
     animation: bounce 2s infinite;
+
 }
 
 .process-item {

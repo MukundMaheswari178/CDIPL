@@ -45,7 +45,7 @@ const HeroSection = () => {
     { name: "The Spot", img: img3 ,dec: 'Introducing The Buzz at Sharda Uptown ORIZZONTE, a dynamic retail destination buzzing with commercial and entertainment activities. Strategically positioned on the ground and first floors of the residential and hostel spaces' },
     { name: "WEB", img: img4 , dec: 'W.E.B. (WHERE EVERYONE BELONGS) at Sharda Uptown ORIZZONTE in Greater Noida offers premium hostel apartments tailored to meet the needs of professionals and students. ' },
     { name: "The Spot", img: img5 ,dec: 'Welcome to The Spot House at Sharda Uptown ORIZZONTE, an innovative development offering fully furnished hostel studios in Knowledge Park 3, Greater Noida.  ' },
-    { name: "Sukhbiri", img: img6 ,dec: '' },
+    { name: "Sukhbiri", img: img6 ,dec: 'Sukhbiri, a  township project by CBPL, spans across a vast 17 Bigha area situated in the central area of NOIDA. It offers opulent luxury villas that provide a holistic living experience. The township is designed to maintain a pollution-free environment for its residents, resulting in restricted vehicular movement within the premises.' },
   ];
 
   return (
