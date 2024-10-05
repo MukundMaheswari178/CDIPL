@@ -32,6 +32,7 @@
   
   .about-section .icon-section {
     margin-right: 10px;
+    padding: 9px;
   }
   
   /* Style for each row containing services */
@@ -43,6 +44,7 @@
   
   /* Style for the years of experience section */
   .about-section .years-experience {
+    
     background-color: #f8f9fa;
     padding: 20px;
     border-radius: 10px;
@@ -59,6 +61,11 @@
   
   .about-section .contact-btn i {
     margin-right: 10px;
+  }
+
+
+  .kgf2{
+    transform: rotate(90deg);
   }
   
   .about-section .phone-info {

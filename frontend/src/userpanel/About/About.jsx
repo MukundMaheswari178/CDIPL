@@ -64,17 +64,17 @@ function AboutSection() {
               </div>
               <div className="col-8 col-md-9">
                 <div className="mb-4">
-                  <p className="h6 text-danger">
+                  <p className="h5 text-secondary">
                     <i className="fas fa-shield-alt text-secondary me-2"></i>
-                    Trusted by Thousands of Clients
+                   <span style={{textAlign:'left'}}> Trusted by Thousands of Clients</span>
                   </p>
-                  <p className="h6 text-danger">
+                  <p className="h5 text-secondary">
                     <i className="fas fa-chart-line text-secondary me-2"></i>
-                    Comprehensive Market Insights
+                   <span> Comprehensive Market Insights</span>
                   </p>
-                  <p className="h6 text-danger">
+                  <p className="h5 text-secondary">
                     <i className="fas fa-user-check text-secondary me-2"></i>
-                    Personalized Service for Every Client
+                   <span> Personalized Service for Every Client</span>
                   </p>
                 </div>
                 {/* Contact Information */}
@@ -84,7 +84,7 @@ function AboutSection() {
                     className="btn btn-outline-danger me-4 wow tada"
                     data-wow-delay=".9s"
                   >
-                    <i className="fa fa-phone-alt fa-2x"></i>
+                    <i className="fa fa-phone-alt fa-2x  kgf2"></i>
                   </a>
                   <div className="phone-info">
                     <span className="text-danger">Have any questions?</span>

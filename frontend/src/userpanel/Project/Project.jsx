@@ -48,7 +48,7 @@ const Projects = () => {
               tittle="The-Buzz"
               name="The-Buzz"
               phone="01234 567 890"
-              price="₹7,20,000/month"
+              price="₹23,500/sqft"
               address="WTC, Plot no-13A & 13B Sector-Techzone, Greater Noida, Pincode-201308."
             />
             <OfficeCard
@@ -58,7 +58,7 @@ const Projects = () => {
               tittle="WEB"
               name="WEB"
               phone="+91 1234567890"
-              price="₹8,00,000/month"
+              price="₹22,500/sqft"
               address="WTC, Plot no-13A & 13B Sector-Techzone, Greater Noida, Pincode-201308."
             />
           </div>

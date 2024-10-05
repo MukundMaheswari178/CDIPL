@@ -84,7 +84,9 @@
   font-size: 25px;
   margin-right: 9px;
   color: rgba(234, 20, 20, 0.806);
+  transform: rotate(90deg); /* Rotate the icon by 370 degrees */
 }
+
 
 /* Hamburger Menu Icon */
 .hamburger-icon {

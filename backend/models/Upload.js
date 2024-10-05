@@ -22,4 +22,8 @@ const Upload = sequelize.define('Upload', {
   timestamps: true,  // Automatically adds createdAt and updatedAt fields
 });
 
+// Sync model with database
+Upload.sync();
+
+
 module.exports = Upload;
