@@ -75,11 +75,11 @@ const Navbar = () => {
                         <nav className="mobile-nav">
                             <ul className="mobile-menu-list">
                                 <li><a href="/">Home</a></li>
-                                <li><a href="/about">About Us</a></li>
-                                <li><a href="/services">Services</a></li>
-                                <li><a href="/pages">Pages</a></li>
-                                <li><a href="/blog">Blog</a></li>
-                                <li><a href="/contact">Contact</a></li>
+                                <li><a href="/About-Us">About Us</a></li>
+                                <li><a href="/property">Projects</a></li>
+                                <li><a href="/">Faq</a></li>
+                                <li><a href="/">Blog</a></li>
+                                <li><a href="/Contact-Us">Contact</a></li>
                             </ul>
                         </nav>
                         {/* Contact Info in Mobile Menu */}
