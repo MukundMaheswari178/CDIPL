@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link for routing
 import './Project.css';
-import office1 from '../../assets/office-1.jpg';
-import office2 from '../../assets/office-2.jpg';
-import office3 from '../../assets/office-3.jpg';
-import office4 from '../../assets/office-4.jpg';
+import office2 from '../../assets/Image-1.jpg';
+import office3 from '../../assets/m3m-the-line.png';
+import office1 from '../../assets/Studio apartment.png';
+import office4 from '../../assets/Image-1.jpg';
 
 const Projects = () => {
   return (
@@ -45,8 +45,8 @@ const Projects = () => {
               projectId="3"
               delay="0.5s"
               imgSrc={office3}
-              tittle="The-Buzz"
-              name="The-Buzz"
+              tittle="m3m-the-line.pn"
+              name="M3M The Line"
               phone="01234 567 890"
               price="₹23,500/sqft"
               address="WTC, Plot no-13A & 13B Sector-Techzone, Greater Noida, Pincode-201308."

@@ -3,10 +3,10 @@
 import React, { useEffect, useState } from 'react';
 import './ProjectDetail.css';
 import { FaRulerCombined, FaMoneyBillWave, FaBuilding, FaMapMarkedAlt, FaCalendarAlt, FaShoppingCart, FaPaw, FaUtensils, FaShieldAlt, FaTableTennis, FaVolleyballBall, FaVideo, FaWifi, FaLeaf, FaFilm, FaDrumstickBite, FaGolfBall, FaPhoneAlt, FaDoorOpen, FaHotTub, FaFireExtinguisher } from 'react-icons/fa';
-import projectMainImg from '../../assets/office-1.jpg';
-import gallery1 from '../../assets/office-1.jpg';
-import gallery2 from '../../assets/office-2.jpg';
-import gallery3 from '../../assets/office-3.jpg';
+import projectMainImg from '../../assets/Image-1.jpg';
+import gallery1 from '../../assets/Image-1.jpg';
+import gallery2 from '../../assets/Studio apartment.png';
+import gallery3 from '../../assets/orizzontefront.jpeg';
 import 'bootstrap/dist/css/bootstrap.min.css';  // Import Bootstrap CSS
 import FeedbackForm from '../Feedback/Feedback';
 import Footer from '../Footer/Footer';
