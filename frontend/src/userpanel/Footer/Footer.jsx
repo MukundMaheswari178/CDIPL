@@ -186,7 +186,7 @@ const Footer = () => {
       {/* Copyright End */}
 
       {/* Back to Top */}
-      <a href="#" className="btn btn-primary btn-lg-square back-to-top">
+      <a href="#" className="btn btn-danger btn-lg-square back-to-top">
         <i className="fa fa-arrow-up"></i>
       </a>
     </>

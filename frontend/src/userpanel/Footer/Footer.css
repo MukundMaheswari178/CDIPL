@@ -187,7 +187,7 @@
 
 
 .copyright a:hover {
-    color: #00bcd4; /* Same highlight for consistency */
+    color: rgba(218, 39, 39, 0.662); /* Same highlight for consistency */
     text-decoration: underline;
 }
 
@@ -218,6 +218,7 @@
 
 .back-to-top i {
     font-size: 20px;
+    padding-top: 6px;
 }
 
 /* Optional: Hide the button by default and show when scrolled down */
