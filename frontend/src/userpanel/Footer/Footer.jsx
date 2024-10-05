@@ -1,67 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Footer.css"; // Assuming you have a CSS file for styling.
 
 
 const Footer = () => {
-  const [showPopup, setShowPopup] = useState(false);
 
-  // To trigger the popup automatically on page load
-  useEffect(() => {
-    const timer = setTimeout(() => setShowPopup(true), 2000); // Show popup after 2 seconds
-    return () => clearTimeout(timer); // Cleanup the timer
-  }, []);
-
-  // Function to handle popup toggle
-  const togglePopup = () => {
-    setShowPopup(!showPopup);
-  };
-
-  // Function to handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // You can add your form submission logic here
-    console.log("Form submitted");
-    togglePopup(); // Close the popup after submission
-  };
 
   return (
     <>
-      {/* Sticky Inquiry Button */}
-      <div className="inquiry-icon" onClick={togglePopup}>
-        <i className="fas fa-question-circle"></i> 
-      </div>
-
-      {/* Inquiry Form Popup */}
-      {showPopup && (
-        <div className="popup-overlay">
-          <div className="popup-box" >
-            <h2>Instant Inquiry</h2>
-            <form className="inquiry-form" onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label>Name</label>
-                <input type="text" className="form-control" placeholder="Enter your name" required />
-              </div>
-              <div className="form-group">
-                <label>Email</label>
-                <input type="email" className="form-control" placeholder="Enter your email" required />
-              </div>
-              <div className="form-group">
-                <label>Phone Number</label>
-                <input type="tel" className="form-control" placeholder="Enter your phone number" required />
-              </div>
-              <div className="form-group">
-                <label>Inquiry Purpose</label>
-                <textarea className="form-control" placeholder="Describe your inquiry" required></textarea>
-              </div>
-              <div className="button-group">
-                <button type="submit" className="btn btn-danger">Submit</button>
-                <button type="button" className="btn btn-secondary" onClick={togglePopup}>Close</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
+    
 
       <div className="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
         <div className="container py-5">
@@ -119,17 +66,17 @@ const Footer = () => {
             <div className="col-md-6 col-lg-6 col-xl-3">
               <div className="footer-item d-flex flex-column">
                 <h4 className="text-secondary mb-4">Our Services</h4>
-                <a href="#">
+                <a href="/property">
                   <i className="fas fa-angle-right me-2"></i> Property
                 </a>
-                <a href="#">
-                  <i className="fas fa-angle-right me-2"></i> Evaluation
+                <a href="/About-Us">
+                  <i className="fas fa-angle-right me-2"></i> About
+                </a>
+                <a href="/Contact-Us">
+                  <i className="fas fa-angle-right me-2"></i> Contact
                 </a>
                 <a href="#">
-                  <i className="fas fa-angle-right me-2"></i> Migrate
-                </a>
-                <a href="#">
-                  <i className="fas fa-angle-right me-2"></i> Study
+                  <i className="fas fa-angle-right me-2"></i> Blog
                 </a>
                 <a href="#">
                   <i className="fas fa-angle-right me-2"></i> Counselling
@@ -149,7 +96,7 @@ const Footer = () => {
                   cater Residential, Commercial, and Mixed Use real estate needs of the DELHI NCR
                   region.
                 </p>
-                <div className="position-relative mx-auto rounded-pill">
+                {/* <div className="position-relative mx-auto rounded-pill">
                   <input
                     className="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5"
                     type="text"
@@ -161,7 +108,7 @@ const Footer = () => {
                   >
                     SignUp
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -183,13 +130,10 @@ const Footer = () => {
             </div>
             <div className="col-md-6 text-center text-md-end text-white">
               Designed By{" "}
-              <a className="border-bottom text-white" href="https://htmlcodex.com">
+              <a className="border-bottom text-white" href="">
                 DSMARKIT
               </a>{" "}
-              Distributed By{" "}
-              <a className="border-bottom text-white" href="https://themewagon.com">
-                CDIPL
-              </a>
+            
             </div>
           </div>
         </div>
