@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import "./Footer.css"; // Assuming you have a CSS file for styling.
 
+
 const Footer = () => {
   const [showPopup, setShowPopup] = useState(false);
 
@@ -16,37 +17,47 @@ const Footer = () => {
     setShowPopup(!showPopup);
   };
 
+  // Function to handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // You can add your form submission logic here
+    console.log("Form submitted");
+    togglePopup(); // Close the popup after submission
+  };
+
   return (
     <>
       {/* Sticky Inquiry Button */}
       <div className="inquiry-icon" onClick={togglePopup}>
-        <i className="fas fa-question-circle"></i> Inquiry
+        <i className="fas fa-question-circle"></i> 
       </div>
 
       {/* Inquiry Form Popup */}
       {showPopup && (
         <div className="popup-overlay">
-          <div className="popup-box">
+          <div className="popup-box" >
             <h2>Instant Inquiry</h2>
-            <form className="inquiry-form">
+            <form className="inquiry-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label>Name</label>
-                <input type="text" className="form-control" placeholder="Enter your name" />
+                <input type="text" className="form-control" placeholder="Enter your name" required />
               </div>
               <div className="form-group">
                 <label>Email</label>
-                <input type="email" className="form-control" placeholder="Enter your email" />
+                <input type="email" className="form-control" placeholder="Enter your email" required />
               </div>
               <div className="form-group">
                 <label>Phone Number</label>
-                <input type="tel" className="form-control" placeholder="Enter your phone number" />
+                <input type="tel" className="form-control" placeholder="Enter your phone number" required />
               </div>
               <div className="form-group">
                 <label>Inquiry Purpose</label>
-                <textarea className="form-control" placeholder="Describe your inquiry"></textarea>
+                <textarea className="form-control" placeholder="Describe your inquiry" required></textarea>
               </div>
-              <button type="submit" className="btn btn-primary">Submit</button>
-              <button type="button" className="btn btn-secondary" onClick={togglePopup}>Close</button>
+              <div className="button-group">
+                <button type="submit" className="btn btn-danger">Submit</button>
+                <button type="button" className="btn btn-secondary" onClick={togglePopup}>Close</button>
+              </div>
             </form>
           </div>
         </div>
@@ -59,10 +70,10 @@ const Footer = () => {
               <div className="footer-item d-flex flex-column">
                 <h4 className="text-secondary mb-4">Contact Info</h4>
                 <a href="#">
-                  <i className="fa fa-map-marker-alt me-2"></i>  B-84, Sector 2, Noida 201301, GautamBuddh Nagar    
-                            </a>
+                  <i className="fa fa-map-marker-alt me-2"></i> B-84, Sector 2, Noida 201301, GautamBuddh Nagar    
+                </a>
                 <a href="#">
-                  <i className="fas fa-envelope me-2"></i>  info@contourdirectindia.com
+                  <i className="fas fa-envelope me-2"></i> info@contourdirectindia.com
                 </a>
                 <a href="#">
                   <i className="fas fa-phone me-2"></i> +91-8087616057
@@ -132,11 +143,11 @@ const Footer = () => {
               <div className="footer-item">
                 <h4 className="text-secondary mb-4">Newsletter</h4>
                 <p className="text-white mb-3">
-                Welcome to <strong>Contour Direct India Private Limited </strong> a sister concern firm of<strong> CBPL</strong>.
-              Founded in 2024, CDIPL is a Real estate Consulting firm with huge aspirations
-              and the entire Real estate world to capture in its arms. CDIPL is aligned to
-              cater Residential, Commercial and Mixed Use real estate needs of DELHI NCR
-              region.
+                  Welcome to <strong>Contour Direct India Private Limited</strong>, a sister concern firm of <strong>CBPL</strong>.
+                  Founded in 2024, CDIPL is a Real estate Consulting firm with huge aspirations
+                  and the entire Real estate world to capture in its arms. CDIPL is aligned to
+                  cater Residential, Commercial, and Mixed Use real estate needs of the DELHI NCR
+                  region.
                 </p>
                 <div className="position-relative mx-auto rounded-pill">
                   <input
@@ -167,7 +178,7 @@ const Footer = () => {
                 <a href="www.cdipl.com" className="border-bottom text-white">
                   <i className="fas fa-copyright text-light me-2"></i>CDIPL
                 </a>
-                , All right reserved.
+                , All rights reserved.
               </span>
             </div>
             <div className="col-md-6 text-center text-md-end text-white">

@@ -1,125 +1,105 @@
 /*** Footer Start ***/
 .footer {
-    background: #1f1f1f; /* Darker background for contrast */
-    color: var(--bs-white); /* Ensure text is visible */
-    padding: 60px 0; /* Add padding for spacing */
+  background: #1f1f1f; /* Darker background for contrast */
+  color: var(--bs-white); /* Ensure text is visible */
+  padding: 60px 0; /* Add padding for spacing */
 }
 
 .footer h4 {
-    color: var(--bs-secondary); /* Make the section titles stand out */
-    font-weight: 800;
+  color: var(--bs-secondary); /* Make the section titles stand out */
+  font-weight: 800;
 }
 
 .footer .footer-item a {
-    line-height: 30px;
-    color: rgba(255, 255, 255, 0.75); /* Slightly lighter for better readability */
-    transition: all 0.3s ease-in-out;
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.75); /* Slightly lighter for better readability */
+  transition: all 0.3s ease-in-out;
 }
 
 .footer .footer-item p {
-    line-height: 25px;
-    color: rgba(255, 255, 255, 0.75); /* Match link color */
+  line-height: 25px;
+  color: rgba(255, 255, 255, 0.75); /* Match link color */
 }
 
 .footer .footer-item a:hover {
-    letter-spacing: 2px;
-    color: #00bcd4; /* Highlight color for hover effect */
+  letter-spacing: 2px;
+  color: red; /* Highlight color for hover effect */
 }
 
 .footer .footer-item .form-control {
-    background: #2c2c2c; /* Form input background */
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #2c2c2c; /* Form input background */
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .footer .footer-item .form-control:focus {
-    box-shadow: none;
-    border-color: rgb(212, 32, 32);
+  box-shadow: none;
+  border-color: rgb(212, 32, 32);
 }
 
 .footer .footer-item .btn-primary {
-    background-color: rgb(216, 33, 33); /* Button color */
-    border: none;
+  background-color: rgb(216, 33, 33); /* Button color */
+  border: none;
 }
 
 .footer .footer-item .btn-primary:hover {
-    background-color: rgb(222, 26, 26); /* Darken on hover */
+  background-color: rgb(222, 26, 26); /* Darken on hover */
 }
 
 .footer .footer-item .btn i {
-    color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .footer .footer-item .btn:hover i {
-    color:  rgba(218, 24, 24, 0.805);
+  color: rgba(218, 24, 24, 0.805);
 }
 
 .footer .social-icons a {
-    color: rgba(255, 255, 255, 0.75);
-    margin-right: 10px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-right: 10px;
 }
 
 .footer .social-icons a:hover {
-    color: rgba(227, 36, 36, 0.732);
+  color: rgba(227, 36, 36, 0.732);
 }
 
 /*** Footer End ***/
-.inquiry-button {
-    position: fixed;
-    top: 10px; /* Adjust top positioning */
-    right: 20px; /* Align to the right */
-    z-index: 1000; /* Ensure it's on top */
-  }
-  
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999; /* Modal on top */
-  }
-  
-  .modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    width: 300px; /* Adjust as necessary */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-  
+
 /* Inquiry Button Style */
+.inquiry-button {
+  position: fixed;
+  top: 10px; /* Adjust top positioning */
+  right: 20px; /* Align to the right */
+  z-index: 1000; /* Ensure it's on top */
+}
+
 .inquiry-icon {
   position: fixed;
   top: 30%;
-  right: 20px;
+  right: 2px;
   background-color: rgba(228, 26, 26, 0.813);
   color: white;
   padding: 10px;
-  border-radius: 50px;
+  border-radius: 22px;
   cursor: pointer;
   z-index: 1000;
-  font-size: 20px;
+  font-size: 10px;
   display: flex;
   align-items: center;
 }
 
 .inquiry-icon i {
-  margin-right: 5px;
-  font-size: 20px;
+  margin-right: 2px;
+  font-size: 22px;
 }
 
 /* Popup Overlay Style */
 .popup-overlay {
   position: fixed;
-  top: 0;
+  top: 0; /* Cover the full viewport */
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100%; /* Cover the full height */
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
@@ -132,9 +112,14 @@
   background-color: white;
   padding: 20px;
   border-radius: 10px;
-  width: 400px;
-  max-width: 90%;
+  width: 90%; /* Full width for small devices */
+  max-width: 400px; /* Limit maximum width */
+  margin-bottom: 20%;
+  margin-top: 20%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background-image: url(../../assets/Trustworthy.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .popup-box h2 {
@@ -168,68 +153,109 @@
   margin-top: 10px;
 }
 
-
-/*** copyright Start ***/
+/*** Copyright Start ***/
 .copyright {
-    background: #151515; /* Dark background for copyright area */
-    padding: 20px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.5);
-    text-align: center;
-    font-size: 14px;
+  background: #151515; /* Dark background for copyright area */
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  font-size: 14px;
 }
 
 .copyright a {
-    color: rgba(255, 255, 255, 0.75);
-    text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
 }
-
-
 
 .copyright a:hover {
-    color: rgba(218, 39, 39, 0.662); /* Same highlight for consistency */
-    text-decoration: underline;
+  color: rgba(218, 39, 39, 0.662); /* Same highlight for consistency */
+  text-decoration: underline;
 }
 
-/*** copyright End ***/
+/*** Copyright End ***/
 
 /*** Back to Top Button ***/
 .back-to-top {
-    position: fixed; /* Sticky to the viewport */
-    bottom: 30px; /* Distance from the bottom */
-    right: 30px;  /* Distance from the right side */
-    z-index: 999; /* Make sure it stays above other elements */
-    background-color: rgba(229, 33, 33, 0.718); /* Button color */
-    color: white;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%; /* Make it circular */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
-    transition: all 0.3s ease-in-out;
+  position: fixed; /* Sticky to the viewport */
+  bottom: 20px; /* Distance from the bottom */
+  right: 30px;  /* Distance from the right side */
+  z-index: 999; /* Make sure it stays above other elements */
+  background-color: rgba(229, 33, 33, 0.718); /* Button color */
+  color: white;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Make it circular */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+  transition: all 0.3s ease-in-out;
 }
 
 .back-to-top:hover {
-    background-color: rgba(220, 35, 35, 0.851); /* Darken on hover */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+  background-color: rgba(220, 35, 35, 0.851); /* Darken on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
 }
 
 .back-to-top i {
-    font-size: 20px;
-    padding-top: 6px;
+  font-size: 13px;
+  align-items: center;
+  text-align: center;
 }
 
 /* Optional: Hide the button by default and show when scrolled down */
 .back-to-top.hide {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s;
 }
 
 /* Show button when scrolled down */
 .back-to-top.show {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
+}   
+
+@media screen and (max-width: 768px) {
+  .popup-box {
+    margin-bottom: 20%; /* Reduced for smaller screens */
+  }
+
+  .inquiry-form {
+    font-size: 14px; /* Adjusted font size for smaller screens */
+  }
+  
+  .inquiry-icon {
+    font-size: 12px; /* Increased icon size for better visibility */
+  }
+
+  .inquiry-icon i {
+    font-size: 24px; /* Increased icon size for better visibility */
+  }
+
+  .inquiry-form .form-group input,
+  .inquiry-form .form-group textarea {
+    padding: 8px; /* Reduced padding for smaller devices */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .popup-box {
+    padding: 10px; /* Reduced padding for extra small devices */
+    
+  }
+
+  .inquiry-icon {
+    padding: 5px; /* Reduced padding for smaller devices */
+  }
+  
+  .inquiry-form .form-group label {
+    font-size: 10px; /* Adjusted label size for smaller screens */
+  }
+
+  .inquiry-form .form-group input,
+  .inquiry-form .form-group textarea {
+    padding: 5px; /* Reduced padding for smaller devices */
+  }
 }

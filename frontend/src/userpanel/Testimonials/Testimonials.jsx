@@ -40,13 +40,26 @@ const Testimonials = () => {
     <div className="testimonial-section">
       <h2>What Our Clients Say</h2>
       <Swiper
-        spaceBetween={30}
-        slidesPerView={3} // Show 3 slides at once
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
-        loop={true}
-        modules={[Autoplay]} // Add Autoplay module here
-        className="mySwiper"
-      >
+  spaceBetween={30}
+  autoplay={{ delay: 3000, disableOnInteraction: false }} // Autoplay settings
+  loop={true} // Enable looping
+  modules={[Autoplay]} // Add Autoplay module here
+  breakpoints={{
+    320: {
+      slidesPerView: 1, // 1 card on small screens
+    },
+    768: {
+      slidesPerView: 2, // 2 cards on medium screens
+    },
+    1024: {
+      slidesPerView: 3, // 3 cards on larger screens
+    },
+    1440: {
+      slidesPerView: 4, // 4 cards on extra-large screens
+    },
+  }}
+  className="mySwiper"
+>
         {testimonials.map((testimonial, index) => (
           <SwiperSlide key={index} className="testimonial-slide">
             <div className="testimonial-card">

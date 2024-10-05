@@ -1,14 +1,14 @@
 import React from 'react';
 import './ProcessSection.css';
-import trusted from '../../assets/try.jpg';
+
 import saleunse from '../../assets/for-sale-unscreen.gif';
 import leadership from '../../assets/leadership-unscreen.gif';
 import value from '../../assets/value-unscreen.gif';
 
 const ProcessSection = () => {
   return (
-    <div className="process-container" style={{ backgroundImage: `url(${trusted})`}}>
-          <h2 style={{textAlign:'center', color:'white', fontWeight:'700'}}>Why Choose Us</h2>
+    <div className="process-container" >
+          <h2 style={{textAlign:'center', color:'black', fontWeight:'700'}}>Why Choose Us</h2>
       <div className="process-body">
         <div className="left-side">
           <div className="process-item animated-item">
@@ -44,7 +44,7 @@ const ProcessSection = () => {
 
         {/* CDIPL Logo in the center */}
         <div className="logo-section">
-          <img src='./cdipl.png' alt="CDIPL Logo" className="cdipl-logo" />
+          <img src='./cdiplogo.png' alt="CDIPL Logo" className="cdipl-logo" />
         </div>
 
         <div className="right-side">

@@ -21,27 +21,39 @@ const Companies = () => {
 
   const companies = [
     {
-      name: "Prologis",
-      description: "Leading global logistics company providing distribution and warehousing."
+      name: "Investment",
+      description: "Maximize your returns with strategic investments in various sectors."
     },
     {
-      name: "Tower",
-      description: "Skyscrapers and high-rise building developers and designers."
+      name: "Rental Income",
+      description: "Generate passive income through short-term and long-term rental properties."
     },
     {
-      name: "Equinix",
-      description: "Data center and internet exchange provider for digital business."
+      name: "Luxury Properties",
+      description: "Explore exquisite luxury homes and villas for discerning buyers."
     },
     {
-      name: "Realty",
-      description: "Real estate company specializing in commercial and residential properties."
+      name: "Office Space",
+      description: "Invest in prime office spaces catering to the IT/ITES sector for high yields."
+    },
+    {
+      name: "Owning a Land Parcel",
+      description: "Invest in land parcels for future development or personal use."
+    },
+    {
+      name: "Freehold",
+      description: "Own property without any time limits, providing you with total control."
+    },
+    {
+      name: "Leasehold",
+      description: "Invest in leasehold properties offering security and investment potential."
     }
   ];
 
   return (
     <section className="c-wrapper">
       <h2 className="c-heading">What's your approach?</h2>
-      <p className="c-description">Our approach involves partnering with leading companies globally to deliver top-tier services and products to our clients.</p>
+      <p className="c-description">Our approach involves partnering with leading companies globally to deliver top-tier investment opportunities and property services.</p>
       <div ref={containerRef} className="paddings innerWidth flexCenter c-container9">
         {companies.map((company, index) => (
           <div key={index} className="company-box">

@@ -6,7 +6,7 @@
     position: relative;
     z-index: 1;
     color: white;
-    background-color: rgba(245, 222, 179, 0.524);
+    background-color: whitesmoke;
 }
 
 .process-body {
@@ -40,7 +40,7 @@
     display: flex;
     gap: 1rem;
     align-items: center;
-    background-color: rgba(243, 28, 8, 0.784);
+    background-color: rgba(229, 57, 41, 0.784);
     padding: 1rem;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;

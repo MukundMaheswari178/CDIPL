@@ -7,7 +7,7 @@
   
   .real-estate-section .section-title {
     font-size: 1.5rem;
-    color: #00a3ff;
+    color: rgba(232, 27, 27, 0.888);
     text-transform: uppercase;
     letter-spacing: 1px;
   }
@@ -60,7 +60,7 @@
   }
   
   .blog-date-box {
-    background-color: #00a3ff;
+    background-color: rgba(225, 42, 42, 0.873);
     color: white;
     padding: 8px 15px;
     font-size: 0.9rem;
@@ -83,7 +83,7 @@
   }
   
   .read-more {
-    color: #00a3ff;
+    color: rgba(233, 27, 27, 0.974);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
@@ -91,6 +91,7 @@
   
   .read-more:hover {
     text-decoration: underline;
+    color: red;
   }
   
   /* Responsive Design */
