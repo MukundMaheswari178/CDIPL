@@ -34,16 +34,16 @@
 
 .footer .footer-item .form-control:focus {
     box-shadow: none;
-    border-color: #00bcd4;
+    border-color: rgb(212, 32, 32);
 }
 
 .footer .footer-item .btn-primary {
-    background-color: #00bcd4; /* Button color */
+    background-color: rgb(216, 33, 33); /* Button color */
     border: none;
 }
 
 .footer .footer-item .btn-primary:hover {
-    background-color: #008c9e; /* Darken on hover */
+    background-color: rgb(222, 26, 26); /* Darken on hover */
 }
 
 .footer .footer-item .btn i {
@@ -51,7 +51,7 @@
 }
 
 .footer .footer-item .btn:hover i {
-    color: #00bcd4;
+    color:  rgba(218, 24, 24, 0.805);
 }
 
 .footer .social-icons a {
@@ -60,7 +60,7 @@
 }
 
 .footer .social-icons a:hover {
-    color: #00bcd4;
+    color: rgba(227, 36, 36, 0.732);
 }
 
 /*** Footer End ***/
@@ -97,7 +97,7 @@
   position: fixed;
   top: 30%;
   right: 20px;
-  background-color: #007bff;
+  background-color: rgba(228, 26, 26, 0.813);
   color: white;
   padding: 10px;
   border-radius: 50px;
@@ -199,7 +199,7 @@
     bottom: 30px; /* Distance from the bottom */
     right: 30px;  /* Distance from the right side */
     z-index: 999; /* Make sure it stays above other elements */
-    background-color: #00bcd4; /* Button color */
+    background-color: rgba(229, 33, 33, 0.718); /* Button color */
     color: white;
     width: 50px;
     height: 50px;
@@ -212,7 +212,7 @@
 }
 
 .back-to-top:hover {
-    background-color: #008c9e; /* Darken on hover */
+    background-color: rgba(220, 35, 35, 0.851); /* Darken on hover */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
 }
 

@@ -42,7 +42,7 @@
 }
 
 .menu-list li a:hover {
-  color: #007bff;
+  color: rgba(233, 21, 21, 0.758)
 }
 
 .menu-list li a::before {
@@ -52,7 +52,7 @@
   height: 2px;
   bottom: -5px;
   left: 50%;
-  background-color: #007bff;
+  background-color: rgba(235, 30, 30, 0.758);
   transition: all 0.3s ease-in-out;
 }
 
@@ -66,7 +66,7 @@
   font-size: 22px;
   margin-right: 29px;
   cursor: pointer;
-  color: #007bff;
+  color: rgba(237, 29, 29, 0.767);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -83,7 +83,7 @@
 .call-info .phone-icon {
   font-size: 25px;
   margin-right: 9px;
-  color: #007bff;
+  color: rgba(234, 20, 20, 0.806);
 }
 
 /* Hamburger Menu Icon */
@@ -94,7 +94,7 @@
 }
 
 .hamburger-icon:hover {
-  color: #007bff;
+  color: rgba(242, 27, 27, 0.792);
   transform: scale(1.1);
 }
 
@@ -168,7 +168,7 @@
 }
 
 .mobile-menu-list li a:hover {
-  color: #007bff;
+  color: rgba(224, 30, 30, 0.772);
 }
 
 /* Mobile Contact Info */
@@ -185,7 +185,7 @@
 .mobile-social-media-links a {
   margin: 0 10px;
   font-size: 24px;
-  color: #007bff;
+  color: rgba(226, 26, 26, 0.839);
   transition: transform 0.3s ease-in-out;
 }
 
