@@ -31,7 +31,7 @@ import AddDetailsForm from "./ProjectListingForm/AddDetailsForm";
 
 
 function App() {
-  const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(true); // State to track admin login
+  const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false); // State to track admin login
 
   return (
     <div>
