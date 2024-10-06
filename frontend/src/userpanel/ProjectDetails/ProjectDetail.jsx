@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import './ProjectDetail.css';
 import { FaRulerCombined, FaMoneyBillWave, FaBuilding, FaMapMarkedAlt, FaCalendarAlt, FaShoppingCart, FaPaw, FaUtensils, FaShieldAlt, FaTableTennis, FaVolleyballBall, FaVideo, FaWifi, FaLeaf, FaFilm, FaDrumstickBite, FaGolfBall, FaPhoneAlt, FaDoorOpen, FaHotTub, FaFireExtinguisher } from 'react-icons/fa';
-import projectMainImg from '../../assets/Image-1.jpg';
+
 import gallery1 from '../../assets/Image-1.jpg';
 import gallery2 from '../../assets/Studio apartment.png';
 import gallery3 from '../../assets/orizzontefront.jpeg';
@@ -21,6 +21,7 @@ const ProjectDetail = () => {
 // Get the projectId from URL
   const [projectData, setProjectData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [images, setImages] = useState([]);
   const [error, setError] = useState('');
   const [pamenities, setPamenities] = useState(null);
 
@@ -91,7 +92,29 @@ const ProjectDetail = () => {
     fetchProjectData();
   }, [tittle]);
 
-
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const response = await axios.get(`${config.baseURL}/uploads/${tittle}`); // Adjust the endpoint accordingly
+        if (response.data.success) {
+          console.log('Fetched images:', response.data.images); // Add this log to check the structure of images
+  
+          // Assuming response.data.images is an array of URLs
+          setImages(response.data.images); // Set images to state
+        } else {
+          setError(response.data.message); // Handle error message
+        }
+      } catch (error) {
+        console.error('Error fetching images:', error);
+        setError('Error fetching images.');
+      } finally {
+        setLoading(false); // Ensure loading is stopped
+      }
+    };
+  
+    fetchImages();
+  }, [tittle]); // Dependency array ensures this runs when 'tittle' changes
+  
 
   if (loading) {
     return <div>Loading...</div>;
@@ -106,95 +129,131 @@ const ProjectDetail = () => {
     return <div>No found data</div>
   }
 
+  if (!images) {
+    return <div>No found data</div>
+  }
+  
+
+// Now using categorized images
+const mainGalleryImages = images?.mainGallery || [];
+const GalleryImages = images?.gallery || [];
+const paymentPlanImages = images?.paymentPlan || [];
+const logoImages = images?.logo || [];
+  console.log(mainGalleryImages)
 
   return (
     <div className="project-detail-container container-fluid">
       <div className="row gx-4 gy-4 custom-gap"> {/* Adjusted gutter classes for padding */}
         {/* Left Side: Images and Project Highlights */}
         <div className="col-lg-6">
-          {/* Carousel for Main Project Image */}
-          <div id="projectCarousel" className="carousel slide mb-4" data-bs-ride="carousel">
-            <div className="carousel-inner">
-              <div className="carousel-item active">
-                <img src={projectMainImg} className="d-block w-100" alt="Main Project" />
-              </div>
-              <div className="carousel-item">
-                <img src={gallery1} className="d-block w-100" alt="Gallery Image 1" />
-              </div>
-              <div className="carousel-item">
-                <img src={gallery2} className="d-block w-100" alt="Gallery Image 2" />
-              </div>
-              <div className="carousel-item">
-                <img src={gallery3} className="d-block w-100" alt="Gallery Image 3" />
-              </div>
-            </div>
-            <button className="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-              <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span className="visually-hidden">Previous</span>
-            </button>
-            <button className="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-              <span className="carousel-control-next-icon" aria-hidden="true"></span>
-              <span className="visually-hidden">Next</span>
-            </button>
-          </div>
-
-          {/* Static Gallery below Carousel */}
-          <div className="gallery row g-2 mb-4">
-            <div className="col-4">
-              <img src={gallery1} className="img-fluid rounded" alt="Gallery 1" />
-            </div>
-            <div className="col-4">
-              <img src={gallery2} className="img-fluid rounded" alt="Gallery 2" />
-            </div>
-            <div className="col-4">
-              <img src={gallery3} className="img-fluid rounded" alt="Gallery 3" />
-            </div>
-          </div>
+  {/* Carousel for Main Project Images */}
+  {mainGalleryImages.length > 0 && (
+    <div id="projectCarousel" className="carousel slide mb-4" data-bs-ride="carousel">
+      <div className="carousel-inner">
+        {/* Display the main project image */}
+        <div className="carousel-item active">
+          <img 
+            src={`http://localhost:5000${mainGalleryImages[0].url.replace(/\\/g, '/')}`} 
+            className="d-block w-100" 
+            alt="Main Project Image" 
+          />
         </div>
+        {/* Display other gallery images */}
+        {mainGalleryImages.slice(1).map((image, index) => (
+          <div className="carousel-item" key={index}>
+            <img 
+              src={`http://localhost:5000${image.url.replace(/\\/g, '/')}`} 
+              className="d-block w-100" 
+              alt={`Gallery Image ${index + 1}`} 
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Carousel navigation buttons */}
+      <button className="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Previous</span>
+      </button>
+      <button className="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Next</span>
+      </button>
+    </div>
+  )}
+
+  {/* Static Gallery below Carousel */}
+  <div className="gallery row g-2 mb-4">
+    {GalleryImages.slice(0, 6).map((image, index) => (
+      <div className="col-4" key={index}>
+        <img 
+          src={`http://localhost:5000${image.url.replace(/\\/g, '/')}`} 
+          className="img-fluid rounded" 
+          alt={`Static Gallery Image ${index + 1}`} 
+        />
+      </div>
+    ))}
+  </div>
+</div>
+
+  
 
         {/* Right Side: Project Details */}
         <div className="col-lg-6">
-          <div className="project-details p-3"> {/* Added padding here */}
-            <h2 className="project-title">{projectData.name}</h2>
-            <p className="project-location"> {projectData.location}</p>
-            <p className="project-description">{projectData.description}</p>
+  <div className="project-details p-3">
+    
+    {/* Display the first logo from the fetched logoImages array */}
+    {logoImages.length > 0 && (
+      <div className="text-center mb-4">
+        <img 
+          src={`http://localhost:5000${logoImages[0].url.replace(/\\/g, '/')}`} // Adjusting the URL
+          alt="Project Logo" 
+          style={{
+            width: '120px',  // Fixed size for the logo
+            height: '80px',
+            objectFit: 'contain',
+            margin: '0 auto',
+          }} 
+        />
+      </div>
+    )}
 
-            {/* Display project details without using .map */}
-            <ul className="project-additional-details">
-              <li><strong>Super Area:</strong> {projectData.superArea}</li>
-              <li><strong>Average Price:</strong> {projectData.avgPrice}</li>
-              {/* <li><strong>Total Area:</strong> {projectData.totalArea}</li> */}
-              <li><strong>Property Type:</strong> {projectData.propertyType}</li>
-              <li><strong>Possession:</strong> {projectData.possession}</li>
-            </ul>
+    <h2 className="project-title text-center">{projectData.name}</h2>
+    <p className="project-location text-center">{projectData.location}</p>
+    <p className="project-description">{projectData.description}</p>
 
-            <h3>RERA Details</h3>
-            <ul className="project-additional-details">
-              <li><strong>RERA ID:</strong> {projectData.reraId}</li>
-            </ul>
+    {/* Project details */}
+    <ul className="project-additional-details">
+      <li><strong>Super Area:</strong> {projectData.superArea}</li>
+      <li><strong>Average Price:</strong> {projectData.avgPrice}</li>
+      <li><strong>Property Type:</strong> {projectData.propertyType}</li>
+      <li><strong>Possession:</strong> {projectData.possession}</li>
+    </ul>
 
-            <h3>Prime Locations</h3>
-            <ul className="project-additional-details himanshu">
-                        
-           
-    {projectData.proximity.split(',').reduce((rows, location, index) => {
-      if (index % 2 === 0) {
-        rows.push([location.trim()]);
-      } else {
-        rows[rows.length - 1].push(location.trim());
-      }
-      return rows;
-    }, []).map((row, rowIndex) => (
-      <li key={rowIndex} className="roww">
-        <div className="coll">{row[0]}</div>
-        {row[1] && <div className="coll">{row[1]}</div>} {/* Only show second column if exists */}
-      </li>
-    ))}
-  </ul>
+    <h3>RERA Details</h3>
+    <ul className="project-additional-details">
+      <li><strong>RERA ID:</strong> {projectData.reraId}</li>
+    </ul>
 
+    <h3>Prime Locations</h3>
+    <ul className="project-additional-details himanshu">
+      {projectData.proximity.split(',').reduce((rows, location, index) => {
+        if (index % 2 === 0) {
+          rows.push([location.trim()]);
+        } else {
+          rows[rows.length - 1].push(location.trim());
+        }
+        return rows;
+      }, []).map((row, rowIndex) => (
+        <li key={rowIndex} className="roww">
+          <div className="coll">{row[0]}</div>
+          {row[1] && <div className="coll">{row[1]}</div>}
+        </li>
+      ))}
+    </ul>
 
-          </div>
-        </div>
+  </div>
+</div>
       </div>
 
 
@@ -271,13 +330,7 @@ const ProjectDetail = () => {
               <p>Let's find the perfect deal for you.</p>
 
               <form className="contact-form">
-                <div className="mb-3">
-                  <input
-                    type="date"
-                    className="form-control"
-                    placeholder="Select Date and Time"
-                  />
-                </div>
+               
                 <div className="mb-3">
                   <input
                     type="text"
@@ -303,20 +356,20 @@ const ProjectDetail = () => {
                   <textarea
                     className="form-control"
                     rows="3"
-                    placeholder="Enter Your Messages"
+                    placeholder="Interest in Like 3BHk , 2BHK.."
                   ></textarea>
                 </div>
-                <div className="form-check mb-3">
+                {/* <div className="form-check mb-3">
                   <input
                     className="form-check-input"
                     type="checkbox"
                     value=""
                     id="agreeTerms"
                   />
-                  <label className="form-check-label" htmlFor="agreeTerms">
+                  <label className="form-check-label" htmlFor="agreeTerms" style={{color:'black'}}>
                     I agree to Terms of Use
                   </label>
-                </div>
+                </div> */}
                 <button type="submit" className="btn btn-primary w-100">
                   Submit
                 </button>
@@ -333,9 +386,14 @@ const ProjectDetail = () => {
           <ul className="nav">
             <li><a href="#overview">Overview</a></li>
             <li><a href="#amenities">Amenities</a></li>
-            <li><a href="#floor-plan">Floor Plan</a></li>
+            <li><a href="#floor-plans">Floor Plan</a></li>
             <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#Youtube">Video</a></li>
+
             <li><a href="#payment-plan">Payment Plan</a></li>
+            <li><a href="#Faq">Faq</a></li>
+            <li><a href="#payment-plan">Location</a></li>
+            
             {/* Download Brochure Button */}
             <li className="ml-auto">
               <button className="btn btn-outline-danger">Download Brochure</button>
@@ -431,7 +489,7 @@ const ProjectDetail = () => {
               <div className="carousel-inner">
                 {Imagesdetails.map((detail, index) => (
                   <div className={`carousel-item ${index === activeIndex ? 'active' : ''}`} key={index}>
-                    <img src={index === 0 ? projectMainImg : index === 1 ? gallery1 : gallery2} className="d-block w-100" alt={`Project ${index + 1}`} />
+                    <img src={index === 0 ? gallery3 : index === 1 ? gallery1 : gallery2} className="d-block w-100" alt={`Project ${index + 1}`} />
                   </div>
                 ))}
               </div>
@@ -459,7 +517,7 @@ const ProjectDetail = () => {
         {/* Popup Form */}
         {popupVisible && (
           <div className="popup" style={{ display: 'block', position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: 1000 }}>
-            <div className="popup-content" style={{ background: '#fff', padding: '20px', borderRadius: '8px', width: '400px', margin: '100px auto', position: 'relative' }}>
+            <div className="popup-content" style={{ background: '#fff', padding: '20px', borderRadius: '8px',  margin: '100px auto', position: 'relative' }}>
               <span className="close" onClick={closePopup} style={{ position: 'absolute', top: '10px', right: '10px', cursor: 'pointer', fontSize: '20px' }}>&times;</span>
               <h3>{popupTitle}</h3>
               <form>
@@ -475,7 +533,7 @@ const ProjectDetail = () => {
                   <label htmlFor="phone">Phone:</label>
                   <input type="tel" className="form-control" id="phone" required />
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-danger">Submit</button>
               </form>
             </div>
           </div>
@@ -647,7 +705,7 @@ const ProjectDetail = () => {
           <div className="col-md-6 mb-4">
             <div className="card">
               <img
-                src="path-to-your-image/floor-plan-2.jpg" // replace with actual image path
+                src="" // replace with actual image path
                 className="card-img-top"
                 alt="Floor Plan (Tower-B)"
               />
@@ -662,6 +720,71 @@ const ProjectDetail = () => {
           </div>
         </div>
       </section>
+
+      <section id="gallery" className="container mt-4">
+  <h3>Gallery</h3>
+  <div className="row">
+    {GalleryImages?.map((image, index) => (
+      <div className="col-md-4 mb-4" key={index}>
+        <div className="card h-100">
+          <img
+            src={`http://localhost:5000${image.url.replace(/\\/g, '/')}`} // The image will be fetched from the gallery array
+            className="card-img-top"
+            alt={`Gallery Image ${index + 1}`}
+            style={{ maxHeight: '200px', objectFit: 'cover' }}
+          />
+        </div>
+      </div>
+    ))}
+  </div>
+       </section>
+
+       <section id="payment-plan" className="container mt-4">
+      <h3>Payment Plans</h3>
+      <div className="row justify-content-center">
+      {paymentPlanImages.slice(0,1)?.map((image, index) => (
+        <div className="col-md-8 mb-4" key={index}>
+          <div className="card payment-plan-card h-100">
+            <img
+              src={`http://localhost:5000${image.url.replace(/\\/g, '/')}`} // Fetching image from backend
+              className="card-img-top payment-plan-img"
+              alt="Payment Plan"
+            />
+            <div className="card-body text-center">
+              <a
+                href={`http://localhost:5000${image.url.replace(/\\/g, '/')}`}
+                download
+                className="btn btn-link text-danger download-link"
+              >
+                <i className="fa fa-download"></i> Download Payment Plan
+              </a>
+            </div>
+
+          </div>
+        </div>
+          ))}
+      </div>
+    </section>
+
+    {/* <section id="video-presentation" className="container mt-4">
+      <h3>Video Presentation of Godrej Woods</h3>
+      <p>
+        Click for the video of Godrej Woods Sector 43 Noida and understand every perspective of 
+        'quality living' that they are offering. For more property videos, visit our YouTube channel.
+      </p>
+      <div className="video-container">
+        <iframe
+          src={videoData?.link ? `https://www.youtube.com/embed/${videoData.link.split('v=')[1]}` : `https://www.youtube.com/embed/${placeholderVideoUrl.split('v=')[1]}`}
+          title="YouTube Video"
+          frameBorder="0"
+          allowFullScreen
+          className="video-iframe"
+        />
+      </div>
+      <p className="video-description">{videoData?.description || "Watch our presentation!"}</p>
+    </section> */}
+
+
 
 
       {/* Continue with the remaining sections such as Floor Plan, Gallery, Payment Plan */}

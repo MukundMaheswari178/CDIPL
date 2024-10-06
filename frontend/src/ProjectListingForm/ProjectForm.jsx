@@ -231,11 +231,12 @@ const ProjectForm = () => {
       {step === 2 && (
         <form onSubmit={handleSubmit}>
           <div className="projectlisting-mb-3">
-            <label htmlFor="description">Project Description</label>
+            <label htmlFor="description" className="projectlisting-form-label" >Project Description</label>
             <input
               type="text"
               id="description"
               name="description"
+              className="projectlisting-form-control"
               value={formData.description}
               onChange={handleChange}
               placeholder="Enter project description"
@@ -243,11 +244,12 @@ const ProjectForm = () => {
             />
           </div>
           <div className="projectlisting-mb-3">
-            <label htmlFor="proximity">Prime Location</label>
+            <label htmlFor="proximity" className="projectlisting-form-label">Prime Location</label>
             <input
               type="text"
               id="proximity"
               name="proximity"
+              className="projectlisting-form-control"
               value={formData.proximity}
               onChange={handleChange}
               placeholder="Enter prime locations"
@@ -255,11 +257,12 @@ const ProjectForm = () => {
             />
           </div>
           <div className="projectlisting-mb-3">
-            <label htmlFor="investmentpotential">Investment Potential</label>
+            <label htmlFor="investmentpotential" className="projectlisting-form-label">Investment Potential</label>
             <input
               type="text"
               id="investmentpotential"
               name="investmentpotential"
+              className="projectlisting-form-control"
               value={formData.investmentpotential}
               onChange={handleChange}
               placeholder="Enter Investment Potential"
@@ -267,11 +270,12 @@ const ProjectForm = () => {
             />
           </div>
           <div className="projectlisting-mb-3">
-            <label htmlFor="startingPrice">Starting Price</label>
+            <label htmlFor="startingPrice" className="projectlisting-form-label">Starting Price</label>
             <input
               type="text"
               id="startingPrice"
               name="startingPrice"
+              className="projectlisting-form-control"
               value={formData.startingPrice}
               onChange={handleChange}
               placeholder="Enter Starting Price"

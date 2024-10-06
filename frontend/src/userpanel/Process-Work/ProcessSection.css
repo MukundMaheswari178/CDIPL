@@ -42,14 +42,14 @@
     display: flex;
     gap: 1rem;
     align-items: center;
-    background-color: rgba(229, 57, 41, 0.784);
+    background-color: rgba(234, 26, 26, 0.899);
     padding: 1rem;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .process-item img {
-    width: 50px;
+    width: 90px;
 }
 
 .process-item:hover {
@@ -102,7 +102,7 @@
     }
 
     .process-item img {
-        width: 60px;
+        width: 90px;
         margin-bottom: 1rem;
     }
 
@@ -117,7 +117,7 @@
 
 @media screen and (max-width: 480px) {
     .process-item img {
-        width: 50px;
+        width: 95px;
     }
 
     .process-item h3 {

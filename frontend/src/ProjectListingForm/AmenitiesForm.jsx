@@ -67,7 +67,8 @@ const AmenitiesForm = () => {
       
       if (response.data.success) {
         setMessage('Amenities submitted successfully');
-        navigate('/'); // Navigate to another page after successful submission
+          // Navigate to the upload form with the project title after successful submission
+          navigate(`/upload/${tittle}`);
       }
     } catch (error) {
       setError('Error submitting amenities: ' + error.response?.data?.message || error.message);

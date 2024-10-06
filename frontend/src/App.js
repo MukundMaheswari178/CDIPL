@@ -25,9 +25,13 @@ import AboutCompany from "./userpanel/AboutCompany/AboutCompany";
 import ProjectForm from "./ProjectListingForm/ProjectForm";
 import AmenitiesForm from "./ProjectListingForm/AmenitiesForm";
 import ContactUs from "./userpanel/ContactUs/ContactUs";
+import UploadForm from "./ProjectListingForm/UploadForm";
+import FloorDetails from "./ProjectListingForm/FloorDetails";
+import AddDetailsForm from "./ProjectListingForm/AddDetailsForm";
+
 
 function App() {
-  const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false); // State to track admin login
+  const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(true); // State to track admin login
 
   return (
     <div>
@@ -56,6 +60,9 @@ function App() {
           <Route path='/project-Listing-form' element={<ProjectForm />} />}
         
            <Route path="/amenities-form/:tittle" element={<AmenitiesForm />} />
+           <Route path="/upload/:tittle" element={<UploadForm />} />
+           <Route path="/floordetails/:tittle" element={<FloorDetails/>} />
+           <Route path="/additional/:tittle" element={<AddDetailsForm/>} />
 
           <Route path="/bar" element={<Bar />} />
           <Route path="/pie" element={<Pie />} />

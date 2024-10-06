@@ -1,0 +1,60 @@
+.floor-details-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background-color: white;
+  }
+  
+  .form-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .floor-plan-entry {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .add-more-button, .submit-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+  
+  .add-more-button:hover, .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .feedback-message {
+    margin-top: 20px;
+    color: green;
+  }
+  
+  .error-message {
+    margin-top: 20px;
+    color: red;
+  }
+  

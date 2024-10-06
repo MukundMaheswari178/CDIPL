@@ -8,6 +8,7 @@
    
     background-color: #f9f9f9;
     border-radius: 10px;
+    color:'black'
   }
   
   .projectlisting-mt-5 {
@@ -23,6 +24,7 @@
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
+    color: black;
   }
   
   /* Form control */

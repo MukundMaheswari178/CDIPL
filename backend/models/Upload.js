@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');  // Import DataTypes
-const { sequelize } = require('../config/database');  // Correctly import sequelize instance from your config
+const { DataTypes } = require('sequelize');
+const {sequelize} = require('../config/database'); // Your Sequelize setup
 
 const Upload = sequelize.define('Upload', {
   projectTitle: {
@@ -14,16 +14,16 @@ const Upload = sequelize.define('Upload', {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  fileCategory: {
+    type: DataTypes.STRING, // Store the category like Main Image, Floor, etc.
+    allowNull: false,
+  },
   fileUrl: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-}, {
-  timestamps: true,  // Automatically adds createdAt and updatedAt fields
 });
 
-// Sync model with database
-Upload.sync();
-
+Upload.sync()
 
 module.exports = Upload;
