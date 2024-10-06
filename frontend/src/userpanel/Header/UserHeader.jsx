@@ -84,7 +84,7 @@ const Navbar = () => {
                         </nav>
                         {/* Contact Info in Mobile Menu */}
                         <div className="mobile-contact-info">
-                            <p>86 New Mt. View, NY, USA</p>
+                            <p> B-84, Sector 2, Noida 201301, GautamBuddh Nagar  , Uttar Pradesh </p>
                             <p>Email: contourdirectindia@gmail.com</p>
                             <p>Phone: +91 9266-768-043
                             </p>

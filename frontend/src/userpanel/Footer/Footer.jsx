@@ -17,7 +17,7 @@ const Footer = () => {
               <div className="footer-item d-flex flex-column">
                 <h4 className="text-secondary mb-4">Contact Info</h4>
                 <a href="#">
-                  <i className="fa fa-map-marker-alt me-2"></i> B-84, Sector 2, Noida 201301, GautamBuddh Nagar    
+                  <i className="fa fa-map-marker-alt me-2"></i> B-84, Sector 2, Noida 201301, GautamBuddh Nagar  , Uttar Pradesh  
                 </a>
                 <a href="#">
                   <i className="fas fa-envelope me-2"></i> info@contourdirectindia.com
@@ -91,7 +91,7 @@ const Footer = () => {
                 <h4 className="text-secondary mb-4">Newsletter</h4>
                 <p className="text-white mb-3">
                   Welcome to <strong>Contour Direct India Private Limited</strong>, a sister concern firm of <strong>CBPL</strong>.
-                  Founded in 2024, CDIPL is a Real estate Consulting firm with huge aspirations
+                  Founded in 2019, CDIPL is a Real estate Consulting firm with huge aspirations
                   and the entire Real estate world to capture in its arms. CDIPL is aligned to
                   cater Residential, Commercial, and Mixed Use real estate needs of the DELHI NCR
                   region.

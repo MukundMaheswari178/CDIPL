@@ -141,11 +141,12 @@
   justify-content: center;
   align-items: center;
   z-index: 999;
+ 
 }
 
 /* Popup Box Style */
 .popup-box {
-  background-color: white;
+  
   padding: 20px;
   border-radius: 10px;
   width: 90%; /* Full width for small devices */
@@ -154,7 +155,7 @@
   margin-top: 20%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   /* background-image: url(../../assets/Trustworthy.jpg); */
-  background: #333333f5;
+  background-color: #333333f5;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
@@ -172,6 +173,8 @@
 
 .inquiry-form .form-group label {
   font-weight: bold;
+  color: white;
+
 }
 
 .inquiry-form .form-group input,
@@ -228,7 +231,7 @@
   }
   
   .inquiry-form .form-group label {
-    font-size: 10px; /* Adjusted label size for smaller screens */
+    font-size: 12px; /* Adjusted label size for smaller screens */
   }
 
   .inquiry-form .form-group input,
