@@ -43,6 +43,9 @@ const ProjectDetail = () => {
     setActiveIndex(index);
   };
 
+  const [videoData, setVideoData] = useState(null);
+  const placeholderVideoUrl = 'https://www.youtube.com/watch?v=somePlaceholderId'; // Define a placeholder video URL
+
 
   const Imagesdetails = [
     {
@@ -116,6 +119,21 @@ const ProjectDetail = () => {
   }, [tittle]); // Dependency array ensures this runs when 'tittle' changes
   
 
+
+  useEffect(() => {
+    const fetchVideoDetails = async () => {
+      try {
+        const response = await axios.get(`${config.baseURL}/get/${tittle}`);
+        setVideoData(response.data);
+      } catch (error) {
+        console.error('Error fetching video details:', error);
+      }
+    };
+
+    fetchVideoDetails();
+  }, [tittle]);
+
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -139,7 +157,7 @@ const mainGalleryImages = images?.mainGallery || [];
 const GalleryImages = images?.gallery || [];
 const paymentPlanImages = images?.paymentPlan || [];
 const logoImages = images?.logo || [];
-  console.log(mainGalleryImages)
+ 
 
   return (
     <div className="project-detail-container container-fluid">
@@ -148,52 +166,53 @@ const logoImages = images?.logo || [];
         <div className="col-lg-6">
   {/* Carousel for Main Project Images */}
   {mainGalleryImages.length > 0 && (
-    <div id="projectCarousel" className="carousel slide mb-4" data-bs-ride="carousel">
-      <div className="carousel-inner">
-        {/* Display the main project image */}
-        <div className="carousel-item active">
-          <img 
-            src={`http://localhost:5000${mainGalleryImages[0].url.replace(/\\/g, '/')}`} 
-            className="d-block w-100" 
-            alt="Main Project Image" 
-          />
+        <div id="projectCarousel" className="carousel slide mb-4" data-bs-ride="carousel">
+          <div className="carousel-inner">
+            {/* Display the main project image */}
+            <div className="carousel-item active">
+              <img 
+                src={`${config.baseURL2}${mainGalleryImages[0]?.filePath.replace(/\\/g, '/') || ''}`} 
+                className="d-block w-100" 
+                alt="Main Project Image" 
+              />
+            </div>
+            {/* Display other gallery images */}
+            {mainGalleryImages.slice(1).map((image, index) => (
+              <div className="carousel-item" key={index}>
+                <img 
+                  src={`${config.baseURL2}${image?.filePath.replace(/\\/g, '/') || ''}`} 
+                  className="d-block w-100" 
+                  alt={`Gallery Image ${index + 1}`} 
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Carousel navigation buttons */}
+          <button className="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button className="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
+          </button>
         </div>
-        {/* Display other gallery images */}
-        {mainGalleryImages.slice(1).map((image, index) => (
-          <div className="carousel-item" key={index}>
+      )}
+
+      {/* Static Gallery below Carousel */}
+      <div className="gallery row g-2 mb-4">
+        {GalleryImages.slice(0, 6).map((image, index) => (
+          <div className="col-4" key={index}>
             <img 
-              src={`http://localhost:5000${image.url.replace(/\\/g, '/')}`} 
-              className="d-block w-100" 
-              alt={`Gallery Image ${index + 1}`} 
+              src={`${config.baseURL2}${image?.filePath.replace(/\\/g, '/') || ''}`} 
+              className="img-fluid rounded" 
+              alt={`Static Gallery Image ${index + 1}`} 
             />
           </div>
         ))}
       </div>
 
-      {/* Carousel navigation buttons */}
-      <button className="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
-      </button>
-      <button className="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
-      </button>
-    </div>
-  )}
-
-  {/* Static Gallery below Carousel */}
-  <div className="gallery row g-2 mb-4">
-    {GalleryImages.slice(0, 6).map((image, index) => (
-      <div className="col-4" key={index}>
-        <img 
-          src={`http://localhost:5000${image.url.replace(/\\/g, '/')}`} 
-          className="img-fluid rounded" 
-          alt={`Static Gallery Image ${index + 1}`} 
-        />
-      </div>
-    ))}
-  </div>
 </div>
 
   
@@ -206,7 +225,7 @@ const logoImages = images?.logo || [];
     {logoImages.length > 0 && (
       <div className="text-center mb-4">
         <img 
-          src={`http://localhost:5000${logoImages[0].url.replace(/\\/g, '/')}`} // Adjusting the URL
+          src={`http://localhost:5000${logoImages[0]?.filePath.replace(/\\/g, '/')}`} // Adjusting the URL
           alt="Project Logo" 
           style={{
             width: '120px',  // Fixed size for the logo
@@ -728,7 +747,7 @@ const logoImages = images?.logo || [];
       <div className="col-md-4 mb-4" key={index}>
         <div className="card h-100">
           <img
-            src={`http://localhost:5000${image.url.replace(/\\/g, '/')}`} // The image will be fetched from the gallery array
+            src={`${config.baseURL2}${image?.filePath.replace(/\\/g, '/')}`} // The image will be fetched from the gallery array
             className="card-img-top"
             alt={`Gallery Image ${index + 1}`}
             style={{ maxHeight: '200px', objectFit: 'cover' }}
@@ -746,13 +765,13 @@ const logoImages = images?.logo || [];
         <div className="col-md-8 mb-4" key={index}>
           <div className="card payment-plan-card h-100">
             <img
-              src={`http://localhost:5000${image.url.replace(/\\/g, '/')}`} // Fetching image from backend
+              src={`${config.baseURL2}${image?.filePath.replace(/\\/g, '/')}`} // Fetching image from backend
               className="card-img-top payment-plan-img"
               alt="Payment Plan"
             />
             <div className="card-body text-center">
               <a
-                href={`http://localhost:5000${image.url.replace(/\\/g, '/')}`}
+                href={`${config.baseURL2}${image?.filePath.replace(/\\/g, '/')}`}
                 download
                 className="btn btn-link text-danger download-link"
               >
@@ -766,15 +785,15 @@ const logoImages = images?.logo || [];
       </div>
     </section>
 
-    {/* <section id="video-presentation" className="container mt-4">
-      <h3>Video Presentation of Godrej Woods</h3>
+     <section id="video-presentation" className="container mt-4">
+      <h3>Video Presentation of {tittle}</h3>
       <p>
-        Click for the video of Godrej Woods Sector 43 Noida and understand every perspective of 
+        Click for the video of {tittle} and understand every perspective of 
         'quality living' that they are offering. For more property videos, visit our YouTube channel.
       </p>
       <div className="video-container">
         <iframe
-          src={videoData?.link ? `https://www.youtube.com/embed/${videoData.link.split('v=')[1]}` : `https://www.youtube.com/embed/${placeholderVideoUrl.split('v=')[1]}`}
+          src={videoData?.youtubeLink ? `https://www.youtube.com/embed/${videoData.youtubeLink.split('v=')[1]}` : `https://www.youtube.com/embed/${placeholderVideoUrl.split('v=')[1]}`}
           title="YouTube Video"
           frameBorder="0"
           allowFullScreen
@@ -782,10 +801,19 @@ const logoImages = images?.logo || [];
         />
       </div>
       <p className="video-description">{videoData?.description || "Watch our presentation!"}</p>
-    </section> */}
 
-
-
+      {/* New Section for Location */}
+      <div className="location-container">
+        <h4>Location</h4>
+        {videoData?.locationLink ? (
+          <a href={videoData.locationLink} target="_blank" rel="noopener noreferrer" className="location-link">
+            View on Map
+          </a>
+        ) : (
+          <p>No location available</p>
+        )}
+      </div>
+    </section>
 
       {/* Continue with the remaining sections such as Floor Plan, Gallery, Payment Plan */}
 

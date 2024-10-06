@@ -3,6 +3,11 @@ import axios from 'axios';
 import './AddDetailsForm.css'; // Import the CSS file
 import { useNavigate, useParams } from 'react-router-dom';
 import config from '../config';
+import Topbar from '../scenes/global/Topbar';
+import Sidebar from '../scenes/global/Sidebar';
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { ColorModeContext, useMode } from "../theme";
+
 
 const AddDetailsForm = () => {
     const { tittle } = useParams(); // Use useParams to get the project tittle
@@ -10,6 +15,8 @@ const AddDetailsForm = () => {
   const [description, setDescription] = useState('');
   const [locationLink, setLocationLink] = useState('');
   const [message, setMessage] = useState('');
+  const [theme, colorMode] = useMode();
+  const [isSidebar, setIsSidebar] = useState(true);
 
 
   const handleSubmit = async (e) => {
@@ -30,6 +37,17 @@ const AddDetailsForm = () => {
   };
 
   return (
+    
+    <div>
+        
+  
+      <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <div className="app">
+            <Sidebar isSidebar={isSidebar} />
+            <main className="content">
+              <Topbar setIsSidebar={setIsSidebar} />
     <div className="additional-form-container">
       <h2 className="form-title">Add Additional Details for {tittle}</h2>
       <form className="additional-details-form" onSubmit={handleSubmit}>
@@ -58,6 +76,11 @@ const AddDetailsForm = () => {
         </button>
       </form>
       {message && <p className="form-message">{message}</p>}
+    </div>
+    </main>
+    </div>
+    </ThemeProvider>
+    </ColorModeContext.Provider>
     </div>
   );
 };
