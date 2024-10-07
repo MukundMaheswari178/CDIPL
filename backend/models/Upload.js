@@ -24,6 +24,6 @@ const Upload = sequelize.define('Upload', {
   },
 });
 
-Upload.sync()
+Upload.sync();
 
 module.exports = Upload;
