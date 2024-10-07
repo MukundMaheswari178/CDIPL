@@ -225,7 +225,7 @@ const logoImages = images?.logo || [];
     {logoImages.length > 0 && (
       <div className="text-center mb-4">
         <img 
-          src={`http://localhost:5000${logoImages[0]?.filePath.replace(/\\/g, '/')}`} // Adjusting the URL
+          src={`${config.baseURL2}${logoImages[0]?.filePath.replace(/\\/g, '/')}`} // Adjusting the URL
           alt="Project Logo" 
           style={{
             width: '120px',  // Fixed size for the logo
