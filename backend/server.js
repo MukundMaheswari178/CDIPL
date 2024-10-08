@@ -19,7 +19,14 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors());
 app.use(express.json());
-
+__dirname=path.dirname("")
+const buildpath=path.join(__dirname,"../frontend/build")
+app.use(express.static(buildpath));
+app.use(
+  cors({
+    "origin": "*",
+  })
+);
 // Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
